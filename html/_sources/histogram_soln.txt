@@ -1,0 +1,22 @@
+
+solution
+--------
+
+.. raw:: html
+
+    <table><tr>
+    <script src="./964bd573-6306-4c7e-a3d9-4360a78c6267.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="964bd573-6306-4c7e-a3d9-4360a78c6267" bokeh_modeltype="Plot" async="true"></script>
+    <script src="./224928db-bc9b-478d-b183-45f3dd0bc0c5.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="224928db-bc9b-478d-b183-45f3dd0bc0c5" bokeh_modeltype="Plot" async="true"></script>
+    <script src="./87b264e6-9534-441f-b9bf-944282f840f8.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="87b264e6-9534-441f-b9bf-944282f840f8" bokeh_modeltype="Plot" async="true"></script>
+    <script src="./66a63051-5225-4cee-be40-47b142e6e9d5.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="66a63051-5225-4cee-be40-47b142e6e9d5" bokeh_modeltype="Plot" async="true"></script>
+    <script src="./b9c12b1c-b9f7-454e-abb8-b55e03e36c6b.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="b9c12b1c-b9f7-454e-abb8-b55e03e36c6b" bokeh_modeltype="Plot" async="true"></script>
+    </tr></table>
+
+.. literalinclude:: solutions/histogram.py
+   :language: python
+   :linenos:

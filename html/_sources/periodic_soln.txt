@@ -1,0 +1,14 @@
+
+solution
+--------
+
+.. raw:: html
+
+    <table><tr>
+    <script src="./88932010-9e6a-4e3d-a348-41cbe8cacf80.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="88932010-9e6a-4e3d-a348-41cbe8cacf80" bokeh_modeltype="Plot" async="true"></script>
+    </tr></table>
+
+.. literalinclude:: solutions/periodic.py
+   :language: python
+   :linenos:

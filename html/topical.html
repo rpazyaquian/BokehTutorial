@@ -1,0 +1,1001 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Topical Exercises &mdash; Bokeh Tutorial 0.4.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/my-styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.4.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="_static/bokeh_white_32.ico"/>
+    <link rel="top" title="Bokeh Tutorial 0.4.1 documentation" href="index.html" />
+    <link rel="next" title="Advanced Exercises" href="advanced.html" />
+    <link rel="prev" title="Basic Exercises" href="basic.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+<div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+
+    <div class="container">
+
+      <div class="navbar-header">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="logo"> <img height="32" width="32" src="_static/bokeh-transparent.png" /></a>
+        <a class="navbar-brand" href="index.html">Bokeh Tutorial</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.4.1</b></span>
+      </div>
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#what-s-included">What&#8217;s Included</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#what-s-not">What&#8217;s not</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#exercise-notes">Exercise Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing">Installing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#note-for-windows-users">Note for Windows Users</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Basic Exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#drawing-lines">Drawing Lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#scattering-points">Scattering Points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#displaying-images">Displaying Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#styling-your-plots">Styling your plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#hovering-above-the-data">Hovering above the Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Topical Exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#timeseries">Timeseries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#histograms">Histograms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#boxplots">Boxplots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#heatmaps">Heatmaps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bar-charts">Bar Charts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#les-miserables-co-occurrences">Les Miserables Co-occurrences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#periodic-table-of-elements">Periodic Table of Elements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="more_info.html">More Information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="more_info.html#contact">Contact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_info.html#thanks">Thanks</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Topical Exercises</a><ul>
+<li><a class="reference internal" href="#timeseries">Timeseries</a></li>
+<li><a class="reference internal" href="#histograms">Histograms</a></li>
+<li><a class="reference internal" href="#boxplots">Boxplots</a></li>
+<li><a class="reference internal" href="#heatmaps">Heatmaps</a></li>
+<li><a class="reference internal" href="#bar-charts">Bar Charts</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="basic.html" title="Previous Chapter: Basic Exercises"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Basic Exercises</span>
+    </a>
+  </li>
+  <li>
+    <a href="advanced.html" title="Next Chapter: Advanced Exercises"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Advanced Exercis... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Basic Exercises</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Topical Exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#timeseries">Timeseries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#histograms">Histograms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#boxplots">Boxplots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#heatmaps">Heatmaps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bar-charts">Bar Charts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_info.html">More Information</a></li>
+</ul>
+
+<div id="sourcelink">
+  <a href="_sources/topical.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="topical-exercises">
+<h1>Topical Exercises<a class="headerlink" href="#topical-exercises" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#timeseries" id="id2">Timeseries</a></li>
+<li><a class="reference internal" href="#histograms" id="id3">Histograms</a></li>
+<li><a class="reference internal" href="#boxplots" id="id4">Boxplots</a></li>
+<li><a class="reference internal" href="#heatmaps" id="id5">Heatmaps</a></li>
+<li><a class="reference internal" href="#bar-charts" id="id6">Bar Charts</a></li>
+</ul>
+</div>
+<div class="section" id="timeseries">
+<span id="id1"></span><h2><a class="toc-backref" href="#id2">Timeseries</a><a class="headerlink" href="#timeseries" title="Permalink to this headline">¶</a></h2>
+<p>Bokeh includes support for formatting datetime information as well as picking nice
+ticks on datetime axes. Here we will plot some stock data taken from the <a class="reference external" href="https://code.google.com/p/yahoo-finance-managed/wiki/csvHistQuotesDownload">Yahoo Finance API</a>.</p>
+<ul class="simple">
+<li>exercise location: <strong>scripts/stocks.py</strong></li>
+</ul>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c"># Here is some code to read in some stock data from the Yahoo Finance API</span>
+<span class="n">AAPL</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s">&quot;http://ichart.yahoo.com/table.csv?s=AAPL&amp;a=0&amp;b=1&amp;c=2000&quot;</span><span class="p">,</span>
+    <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Date&#39;</span><span class="p">])</span>
+<span class="n">GOOG</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s">&quot;http://ichart.yahoo.com/table.csv?s=GOOG&amp;a=0&amp;b=1&amp;c=2000&quot;</span><span class="p">,</span>
+    <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Date&#39;</span><span class="p">])</span>
+<span class="n">MSFT</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s">&quot;http://ichart.yahoo.com/table.csv?s=MSFT&amp;a=0&amp;b=1&amp;c=2000&quot;</span><span class="p">,</span>
+    <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Date&#39;</span><span class="p">])</span>
+<span class="n">IBM</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s">&quot;http://ichart.yahoo.com/table.csv?s=IBM&amp;a=0&amp;b=1&amp;c=2000&quot;</span><span class="p">,</span>
+    <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Date&#39;</span><span class="p">])</span>
+
+<span class="n">output_file</span><span class="p">(</span><span class="s">&quot;stocks.html&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&quot;stocks.py example&quot;</span><span class="p">)</span>
+
+<span class="hll"><span class="c"># EXERCISE: turn on plot hold</span>
+</span>
+<span class="hll"><span class="c"># EXERCISE: finish this line plot, and add more for the other stocks. Each one should</span>
+</span><span class="hll"><span class="c"># have a legend, and its own color.</span>
+</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">AAPL</span><span class="p">[</span><span class="s">&#39;Date&#39;</span><span class="p">],</span>                                       <span class="c"># x coordinates</span>
+    <span class="n">AAPL</span><span class="p">[</span><span class="s">&#39;Adj Close&#39;</span><span class="p">],</span>                                  <span class="c"># y coordinates</span>
+    <span class="n">color</span><span class="o">=</span><span class="s">&#39;#A6CEE3&#39;</span><span class="p">,</span>                                    <span class="c"># set a color for the line</span>
+    <span class="n">legend</span><span class="o">=</span><span class="s">&#39;AAPL&#39;</span><span class="p">,</span>                                      <span class="c"># attach a legend label</span>
+    <span class="n">x_axis_type</span> <span class="o">=</span> <span class="s">&quot;datetime&quot;</span><span class="p">,</span>                           <span class="c"># NOTE: only needed on first</span>
+    <span class="n">tools</span><span class="o">=</span><span class="s">&quot;pan,wheel_zoom,box_zoom,reset,previewsave&quot;</span>   <span class="c"># NOTE: only needed on first</span>
+<span class="p">)</span>
+
+<span class="hll"><span class="c"># EXERCISE: style the plot, set a title, lighten the gridlines, etc.</span>
+</span>
+<span class="hll"><span class="c"># EXERCISE: start a new figure</span>
+</span>
+<span class="c"># Here is some code to compute the 30-day moving average for AAPL</span>
+<span class="n">aapl</span> <span class="o">=</span> <span class="n">AAPL</span><span class="p">[</span><span class="s">&#39;Adj Close&#39;</span><span class="p">]</span>
+<span class="n">aapl_dates</span> <span class="o">=</span> <span class="n">AAPL</span><span class="p">[</span><span class="s">&#39;Date&#39;</span><span class="p">]</span>
+
+<span class="n">window_size</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">window_size</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">window_size</span><span class="p">)</span>
+<span class="n">aapl_avg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">aapl</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="s">&#39;same&#39;</span><span class="p">)</span>
+
+<span class="hll"><span class="c"># EXERCISE: plot a scatter of circles for the individual AAPL prices with legend</span>
+</span><span class="hll"><span class="c"># &#39;close&#39;. Remember to set the x axis type and tools on the first renderer.</span>
+</span>
+<span class="hll"><span class="c"># EXERCISE: plot a line of the AAPL moving average data with the legeng &#39;avg&#39;</span>
+</span>
+<span class="hll"><span class="c"># EXERCISE: style the plot, set a title, lighten the gridlines, etc.</span>
+</span>
+<span class="n">show</span><span class="p">()</span>  <span class="c"># open a browser</span>
+</pre></div>
+</td></tr></table></div>
+<p>See the <a class="reference internal" href="stocks_soln.html"><em>solution</em></a>.</p>
+</div>
+<div class="section" id="histograms">
+<span id="histogram"></span><h2><a class="toc-backref" href="#id3">Histograms</a><a class="headerlink" href="#histograms" title="Permalink to this headline">¶</a></h2>
+<p>Histograms are a staple analytical tool in many analytical domains. Let&#8217;s create some
+histograms of samples taken from various statistical distributions, together with the
+ideal probability density and cumulative distribution functions overlaid.</p>
+<p>Instead of the <tt class="docutils literal"><span class="pre">rect</span></tt> renderer, which takes a center point, width and height, we will
+use the <tt class="docutils literal"><span class="pre">quad</span></tt> renderer. It is intended for axis-aligned rectangles, and accepts
+coordinates for left, right, top, and bottom.</p>
+<ul class="simple">
+<li>exercise location: <strong>scripts/histogram.py</strong></li>
+</ul>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108</pre></div></td><td class="code"><div class="highlight"><pre><span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.special</span>
+
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">bokeh.objects</span> <span class="kn">import</span> <span class="n">Range1d</span>
+
+<span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span>       <span class="c"># NOTE: you can tinker with these values if you like</span>
+
+<span class="c"># sample the distribution</span>
+<span class="n">measured</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">measured</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c"># compute ideal values</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">cdf</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">erf</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="hll"><span class="c"># EXERCISE: output to a static HTML file</span>
+</span>
+<span class="hll"><span class="c"># EXERCISE: turn on plot hold</span>
+</span>
+<span class="c"># Use the `quad` renderer to display the histogram bars.</span>
+<span class="n">quad</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="n">hist</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hist</span><span class="p">)),</span> <span class="n">left</span><span class="o">=</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">right</span><span class="o">=</span><span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+     <span class="n">fill_color</span><span class="o">=</span><span class="s">&quot;#036564&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;#033649&quot;</span><span class="p">,</span>
+
+     <span class="c"># NOTE: these are only needed on the first renderer</span>
+     <span class="n">background_fill</span><span class="o">=</span><span class="s">&quot;#E8DDCB&quot;</span><span class="p">,</span>
+     <span class="n">title</span><span class="o">=</span><span class="s">&quot;Normal Distribution (μ=0, σ=0.5)&quot;</span><span class="p">,</span>
+     <span class="n">tools</span><span class="o">=</span><span class="s">&quot;&quot;</span>
+<span class="p">)</span>
+
+<span class="hll"><span class="c"># EXERCISE: supply some style parameters for the PDF and CDF `line` renderers</span>
+</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pdf</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s">&quot;PDF&quot;</span><span class="p">,</span>
+     <span class="n">line_color</span><span class="o">=</span>
+     <span class="n">line_width</span><span class="o">=</span>
+     <span class="n">alpha</span><span class="o">=</span>
+<span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cdf</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s">&quot;CDF&quot;</span><span class="p">,</span>
+     <span class="n">line_color</span><span class="o">=</span>
+     <span class="n">line_width</span><span class="o">=</span>
+     <span class="n">alpha</span><span class="o">=</span>
+<span class="p">)</span>
+
+<span class="c"># Move the legend to a better place.</span>
+<span class="c"># Acceptable values: &#39;top_left&#39;, &#39;top_right&#39;, &#39;bottom_left&#39;, and &#39;bottom_right&#39;</span>
+<span class="n">legend</span><span class="p">()</span><span class="o">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="s">&quot;top_left&quot;</span>
+
+<span class="hll"><span class="c"># EXERCISE: create a new figure</span>
+</span>
+<span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span>       <span class="c"># NOTE: you can tinker with these values if you like</span>
+
+<span class="c"># sample the distribution</span>
+<span class="n">measured</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">measured</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c"># compute ideal values</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">*</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">cdf</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">erf</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sigma</span><span class="p">)))</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="c"># EXERCISE: recreate the first plot for this new data</span>
+
+<span class="hll"><span class="c"># EXERCISE (optional): Add new plots for the other distributions. Some code</span>
+</span><span class="hll"><span class="c"># has be included for the Gamme, Beta, and Weibull distributions, you will</span>
+</span><span class="hll"><span class="c"># need to create new figures and renderers.</span>
+</span>
+<span class="c"># code for Gamma Distribution</span>
+
+<span class="n">k</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span>
+
+<span class="c"># sample the distribution</span>
+<span class="n">measured</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">measured</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c"># compute ideal values</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">theta</span><span class="o">**</span><span class="n">k</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+<span class="n">cdf</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">gammainc</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">x</span><span class="o">/</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
+<span class="c"># code for Beta Distribution</span>
+
+<span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span>
+
+<span class="c"># sample the distribution</span>
+<span class="n">measured</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">measured</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c"># compute ideal values</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="n">alpha</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">beta</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+<span class="n">cdf</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">btdtr</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c"># code for Weibull Distribution</span>
+
+<span class="n">lam</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span>
+
+<span class="c"># sample the distribution</span>
+<span class="n">measured</span> <span class="o">=</span> <span class="n">lam</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">k</span><span class="p">)</span>
+<span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">measured</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c"># compute ideal values</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="n">lam</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">lam</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">lam</span><span class="p">)</span><span class="o">**</span><span class="n">k</span><span class="p">)</span>
+<span class="n">cdf</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">lam</span><span class="p">)</span><span class="o">**</span><span class="n">k</span><span class="p">)</span>
+
+<span class="n">show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>See the <a class="reference internal" href="histogram_soln.html"><em>solution</em></a>.</p>
+</div>
+<div class="section" id="boxplots">
+<span id="boxplot"></span><h2><a class="toc-backref" href="#id4">Boxplots</a><a class="headerlink" href="#boxplots" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>exercise location: <strong>scripts/boxplot.py</strong></li>
+</ul>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c"># Generate some synthetic time series for six different categories</span>
+<span class="n">cats</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s">&quot;abcdef&quot;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">cats</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cats</span><span class="p">):</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">g</span> <span class="o">==</span> <span class="n">l</span><span class="p">]</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">score</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">g</span><span class="p">))</span>
+
+<span class="c"># Find the quartiles, IQR, and outliers for each category</span>
+<span class="n">groups</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">&#39;group&#39;</span><span class="p">)</span>
+<span class="n">q1</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">q2</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">q3</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">iqr</span> <span class="o">=</span> <span class="n">q3</span> <span class="o">-</span> <span class="n">q1</span>
+<span class="n">upper</span> <span class="o">=</span> <span class="n">q2</span> <span class="o">+</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">iqr</span>
+<span class="n">lower</span> <span class="o">=</span> <span class="n">q2</span> <span class="o">-</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">iqr</span>
+<span class="k">def</span> <span class="nf">outliers</span><span class="p">(</span><span class="n">group</span><span class="p">):</span>
+   <span class="n">cat</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">name</span>
+   <span class="k">return</span> <span class="n">group</span><span class="p">[(</span><span class="n">group</span><span class="o">.</span><span class="n">score</span> <span class="o">&gt;</span> <span class="n">upper</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cat</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">|</span> <span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">score</span> <span class="o">&lt;</span> <span class="n">lower</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cat</span><span class="p">][</span><span class="mi">0</span><span class="p">])][</span><span class="s">&#39;score&#39;</span><span class="p">]</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">outliers</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c"># Prepare outlier data for plotting, we need and x (categorical) and y (numeric)</span>
+<span class="c"># coordinate for every outlier.</span>
+<span class="n">outx</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">outy</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">cat</span> <span class="ow">in</span> <span class="n">cats</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">out</span><span class="p">[</span><span class="n">cat</span><span class="p">]:</span>
+        <span class="n">outx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
+        <span class="n">outy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="hll"><span class="c"># EXERCISE: output static HTML file</span>
+</span>
+<span class="hll"><span class="c"># EXERCISE: turn on plot hold</span>
+</span>
+<span class="c"># Draw the upper segment extending from the box plot using `segment` which</span>
+<span class="c"># takes x0, x1 and y0, y1 as data</span>
+<span class="n">segment</span><span class="p">(</span><span class="n">cats</span><span class="p">,</span> <span class="n">upper</span><span class="o">.</span><span class="n">score</span><span class="p">,</span> <span class="n">cats</span><span class="p">,</span> <span class="n">q3</span><span class="o">.</span><span class="n">score</span><span class="p">,</span> <span class="n">x_range</span><span class="o">=</span><span class="n">cats</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">tools</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">background_fill</span><span class="o">=</span><span class="s">&quot;#EFE8E2&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+
+<span class="hll"><span class="c"># EXERCISE: draw the lower segment</span>
+</span>
+<span class="c"># Draw the upper box of the box plot using `rect`</span>
+<span class="n">rect</span><span class="p">(</span><span class="n">cats</span><span class="p">,</span> <span class="p">(</span><span class="n">q3</span><span class="o">.</span><span class="n">score</span><span class="o">+</span><span class="n">q2</span><span class="o">.</span><span class="n">score</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="n">q3</span><span class="o">.</span><span class="n">score</span><span class="o">-</span><span class="n">q2</span><span class="o">.</span><span class="n">score</span><span class="p">,</span>
+     <span class="n">fill_color</span><span class="o">=</span><span class="s">&quot;#E08E79&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="hll"><span class="c"># EXERCISE: use `rect` to draw the bottom box with a different color</span>
+</span>
+<span class="c"># OK here we use `rect` to draw the whiskers. It&#39;s slightly cheating, but it&#39;s</span>
+<span class="c"># easier than using segments or lines, since we can specify widths simply with</span>
+<span class="c"># categorical percentage units</span>
+<span class="n">rect</span><span class="p">(</span><span class="n">cats</span><span class="p">,</span> <span class="n">lower</span><span class="o">.</span><span class="n">score</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">rect</span><span class="p">(</span><span class="n">cats</span><span class="p">,</span> <span class="n">upper</span><span class="o">.</span><span class="n">score</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="hll"><span class="c"># EXERCISE: use `circle` to draw the outliers</span>
+</span>
+<span class="hll"><span class="c"># EXERCISE: use grid(), axis(), etc. to style the plot. Some suggestions:</span>
+</span><span class="hll"><span class="c">#   - remove the X grid lines, change the Y grid line color</span>
+</span><span class="hll"><span class="c">#   - make the tick labels bigger</span>
+</span><span class="n">xgrid</span><span class="p">()</span><span class="o">.</span><span class="n">grid_line_color</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">ygrid</span><span class="p">()</span><span class="o">.</span><span class="n">grid_line_color</span> <span class="o">=</span> <span class="s">&quot;white&quot;</span>
+<span class="n">ygrid</span><span class="p">()</span><span class="o">.</span><span class="n">grid_line_width</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">xaxis</span><span class="p">()</span><span class="o">.</span><span class="n">major_label_text_font_size</span><span class="o">=</span><span class="s">&quot;12pt&quot;</span>
+
+<span class="n">show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>See the <a class="reference internal" href="boxplot_soln.html"><em>solution</em></a>.</p>
+</div>
+<div class="section" id="heatmaps">
+<span id="cat-heatmap"></span><h2><a class="toc-backref" href="#id5">Heatmaps</a><a class="headerlink" href="#heatmaps" title="Permalink to this headline">¶</a></h2>
+<p>The Wall-Street Journal published an excellent heatmap chart <a class="reference external" href="http://online.wsj.com/news/articles/SB10001424052748703338004575230041742556522">U.S. Unemployment: A Historical View</a>. We will create a similar chart
+using Bokeh. This data may be obtained from <a class="reference external" href="http://data.bls.gov/timeseries/LNU04000000">The Bureau of Labor Statistics</a>.</p>
+<ul class="simple">
+<li>exercise location: <strong>scripts/unemployment.py</strong></li>
+</ul>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">bokeh.objects</span> <span class="kn">import</span> <span class="n">HoverTool</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+
+<span class="c"># Read in the data with pandas. Convert the year column to string</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;../data/unemployment.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;Year&#39;</span><span class="p">]]</span>
+<span class="n">years</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;Year&#39;</span><span class="p">])</span>
+<span class="n">months</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Jan&quot;</span><span class="p">,</span><span class="s">&quot;Feb&quot;</span><span class="p">,</span><span class="s">&quot;Mar&quot;</span><span class="p">,</span><span class="s">&quot;Apr&quot;</span><span class="p">,</span><span class="s">&quot;May&quot;</span><span class="p">,</span><span class="s">&quot;Jun&quot;</span><span class="p">,</span><span class="s">&quot;Jul&quot;</span><span class="p">,</span><span class="s">&quot;Aug&quot;</span><span class="p">,</span><span class="s">&quot;Sep&quot;</span><span class="p">,</span><span class="s">&quot;Oct&quot;</span><span class="p">,</span><span class="s">&quot;Nov&quot;</span><span class="p">,</span><span class="s">&quot;Dec&quot;</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">&#39;Year&#39;</span><span class="p">)</span>
+
+<span class="c"># this is the colormap from the original plot</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">&quot;#75968f&quot;</span><span class="p">,</span> <span class="s">&quot;#a5bab7&quot;</span><span class="p">,</span> <span class="s">&quot;#c9d9d3&quot;</span><span class="p">,</span> <span class="s">&quot;#e2e2e2&quot;</span><span class="p">,</span> <span class="s">&quot;#dfccce&quot;</span><span class="p">,</span>
+    <span class="s">&quot;#ddb7b1&quot;</span><span class="p">,</span> <span class="s">&quot;#cc7878&quot;</span><span class="p">,</span> <span class="s">&quot;#933b41&quot;</span><span class="p">,</span> <span class="s">&quot;#550b1d&quot;</span>
+<span class="p">]</span>
+
+<span class="c"># Set up the data for plotting. We will need to have values for every</span>
+<span class="c"># pair of year/month names. Map the rate to a color.</span>
+<span class="n">month</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">year</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">color</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">rate</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">months</span><span class="p">:</span>
+        <span class="n">month</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+        <span class="n">year</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">monthly_rate</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">y</span><span class="p">]</span>
+        <span class="n">rate</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">monthly_rate</span><span class="p">)</span>
+        <span class="n">color</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">monthly_rate</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">)])</span>
+
+<span class="hll"><span class="c"># EXERCISE: create a `ColumnDataSource` with columns: month, year, color, rate</span>
+</span>
+<span class="hll"><span class="c"># EXERCISE: output to static HTML file</span>
+</span>
+<span class="hll"><span class="c"># EXERCISE: create a new figure</span>
+</span>
+<span class="hll"><span class="c"># EXERCISE: use the `rect renderer with the following attributes:</span>
+</span><span class="hll"><span class="c">#   - x_range is years, y_range is months (reversed)</span>
+</span><span class="hll"><span class="c">#   - fill color for the rectangles is the &#39;color&#39; field</span>
+</span><span class="hll"><span class="c">#   - line_color for the rectangles is None</span>
+</span><span class="hll"><span class="c">#   - tools are resize and hover tools</span>
+</span><span class="hll"><span class="c">#   - add a nice title, and set the plot_width and plot_height</span>
+</span><span class="n">rect</span><span class="p">(</span><span class="s">&#39;year&#39;</span><span class="p">,</span> <span class="s">&#39;month&#39;</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+     <span class="n">x_range</span><span class="o">=</span><span class="n">years</span><span class="p">,</span> <span class="n">y_range</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">months</span><span class="p">)),</span>
+     <span class="n">color</span><span class="o">=</span>
+     <span class="n">line_color</span><span class="o">=</span>
+     <span class="n">tools</span><span class="o">=</span>
+     <span class="n">title</span><span class="o">=</span>
+     <span class="n">plot_width</span><span class="o">=</span>
+     <span class="n">plot_height</span><span class="o">=</span>
+<span class="p">)</span>
+
+<span class="hll"><span class="c"># EXERCISE: use grid(), axis(), etc. to style the plot. Some suggestions:</span>
+</span><span class="hll"><span class="c">#   - remove the axis and grid lines</span>
+</span><span class="hll"><span class="c">#   - remove the major ticks</span>
+</span><span class="hll"><span class="c">#   - make the tick labels smaller</span>
+</span><span class="hll"><span class="c">#   - set the x-axis orientation to vertical, or angled</span>
+</span>
+<span class="hll"><span class="c"># EXERCISE: configure the  hover tool to display the month, year and rate</span>
+</span><span class="n">hover</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">curplot</span><span class="p">()</span><span class="o">.</span><span class="n">tools</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">HoverTool</span><span class="p">)][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">hover</span><span class="o">.</span><span class="n">tooltips</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">([</span>
+    <span class="c"># fill me in</span>
+<span class="p">])</span>
+
+<span class="n">show</span><span class="p">()</span>      <span class="c"># show the plot</span>
+</pre></div>
+</td></tr></table></div>
+<p>See the <a class="reference internal" href="unemployment_soln.html"><em>solution</em></a>.</p>
+</div>
+<div class="section" id="bar-charts">
+<span id="bar-chart"></span><h2><a class="toc-backref" href="#id6">Bar Charts</a><a class="headerlink" href="#bar-charts" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s plot some bar charts using 2014 Olympics data. We will make both stacked and grouped
+bar charts of medals won by country. The data for this exercise was obtained using the
+<a class="reference external" href="http://www.kimonolabs.com/sochi/explorer">Sochi API Explorer from Kimono Labs</a>.</p>
+<ul class="simple">
+<li>exercise location: <strong>scripts/olympics.py</strong></li>
+</ul>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">bokeh.objects</span> <span class="kn">import</span> <span class="n">ColumnDataSource</span><span class="p">,</span> <span class="n">Range1d</span>
+
+<span class="n">olympics</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;../data/olympics.json&#39;</span><span class="p">))</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;abbr&#39;</span><span class="p">]:</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;medals&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">olympics</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;medals&#39;</span><span class="p">][</span><span class="s">&#39;total&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">}</span>
+
+<span class="c"># pull out just the data we care about</span>
+<span class="n">countries</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="s">&#39;abbr&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">olympics</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;medals&#39;</span><span class="p">][</span><span class="s">&#39;total&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="s">&#39;total&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span>
+<span class="p">)</span>
+<span class="n">gold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">data</span><span class="p">[</span><span class="n">abbr</span><span class="p">][</span><span class="s">&#39;gold&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">abbr</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+<span class="n">silver</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">data</span><span class="p">[</span><span class="n">abbr</span><span class="p">][</span><span class="s">&#39;silver&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">abbr</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+<span class="n">bronze</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">data</span><span class="p">[</span><span class="n">abbr</span><span class="p">][</span><span class="s">&#39;bronze&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">abbr</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+
+<span class="hll"><span class="c"># EXERCISE: output static HTML file</span>
+</span>
+<span class="hll"><span class="c"># EXERCISE: turn on plot hold</span>
+</span>
+<span class="c"># use the `rect` renderer to display stacked bars of the medal results. Note</span>
+<span class="c"># that we set y_range explicitly on the first renderer with a `Range1d` object</span>
+<span class="n">rect</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">countries</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">bronze</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">bronze</span><span class="p">,</span> <span class="n">x_range</span><span class="o">=</span><span class="n">countries</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;#CD7F32&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+     <span class="n">background_fill</span><span class="o">=</span><span class="s">&#39;#59636C&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&quot;Olympic Medals by Country (stacked)&quot;</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+     <span class="n">y_range</span><span class="o">=</span><span class="n">Range1d</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">gold</span><span class="o">+</span><span class="n">silver</span><span class="o">+</span><span class="n">bronze</span><span class="p">)),</span> <span class="n">plot_width</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+<span class="n">rect</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">countries</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">bronze</span><span class="o">+</span><span class="n">silver</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">silver</span><span class="p">,</span> <span class="n">x_range</span><span class="o">=</span><span class="n">countries</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;silver&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+<span class="hll"><span class="c"># EXERCISE: add a `rect` renderer to stack the gold medal results</span>
+</span>
+<span class="hll"><span class="c"># EXERCISE: use grid(), axis(), etc. to style the plot. Some suggestions:</span>
+</span><span class="hll"><span class="c">#   - remove the grid lines</span>
+</span><span class="hll"><span class="c">#   - change the major label standoff, and major_tick_out values</span>
+</span><span class="hll"><span class="c">#   - make the tick labels smaller</span>
+</span><span class="hll"><span class="c">#   - set the x-axis orientation to vertical, or angled</span>
+</span>
+<span class="hll"><span class="c"># EXERCISE: create a new figure</span>
+</span>
+<span class="c"># Categorical percentage coordinates can be used for positioning/grouping</span>
+<span class="n">countries_bronze</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">+</span><span class="s">&quot;:0.3&quot;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">]</span>
+<span class="n">countries_silver</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">+</span><span class="s">&quot;:0.5&quot;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">]</span>
+<span class="n">countries_gold</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">+</span><span class="s">&quot;:0.7&quot;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">]</span>
+
+<span class="hll"><span class="c"># EXERCISE: re create the medal plot, but this time:</span>
+</span><span class="hll"><span class="c">#   - do not stack the bars on the y coordinate</span>
+</span><span class="hll"><span class="c">#   - use countries_gold, etc. to positions the bars on the x coordinate</span>
+</span>
+<span class="hll"><span class="c"># EXERCISE: use grid(), axis(), etc. to style the plot. Some suggestions:</span>
+</span><span class="hll"><span class="c">#   - remove the axis and grid lines</span>
+</span><span class="hll"><span class="c">#   - remove the major ticks</span>
+</span><span class="hll"><span class="c">#   - make the tick labels smaller</span>
+</span><span class="hll"><span class="c">#   - set the x-axis orientation to vertical, or angled</span>
+</span><span class="n">xaxis</span><span class="p">()</span><span class="o">.</span><span class="n">major_label_standoff</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">xaxis</span><span class="p">()</span><span class="o">.</span><span class="n">major_tick_out</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">show</span><span class="p">()</span>      <span class="c"># show the plot</span>
+</pre></div>
+</td></tr></table></div>
+<p>See the <a class="reference internal" href="olympics_soln.html"><em>solution</em></a>.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="_sources/topical.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Continuum Anaytics.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-7', 'pydata.org');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>

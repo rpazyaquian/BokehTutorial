@@ -1,0 +1,14 @@
+
+solution
+--------
+
+.. raw:: html
+
+    <table><tr>
+    <script src="./5696c1c2-b1e1-44f1-bcc1-b755797a37b4.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="5696c1c2-b1e1-44f1-bcc1-b755797a37b4" bokeh_modeltype="Plot" async="true"></script>
+    </tr></table>
+
+.. literalinclude:: solutions/les_mis.py
+   :language: python
+   :linenos:

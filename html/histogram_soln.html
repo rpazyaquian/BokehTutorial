@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>solution &mdash; Bokeh Tutorial 0.4.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/my-styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.4.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="_static/bokeh_white_32.ico"/>
+    <link rel="top" title="Bokeh Tutorial 0.4.1 documentation" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+<div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+
+    <div class="container">
+
+      <div class="navbar-header">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="logo"> <img height="32" width="32" src="_static/bokeh-transparent.png" /></a>
+        <a class="navbar-brand" href="index.html">Bokeh Tutorial</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.4.1</b></span>
+      </div>
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#what-s-included">What&#8217;s Included</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#what-s-not">What&#8217;s not</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#exercise-notes">Exercise Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing">Installing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#note-for-windows-users">Note for Windows Users</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Basic Exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#drawing-lines">Drawing Lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#scattering-points">Scattering Points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#displaying-images">Displaying Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#styling-your-plots">Styling your plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic.html#hovering-above-the-data">Hovering above the Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="topical.html">Topical Exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="topical.html#timeseries">Timeseries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topical.html#histograms">Histograms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topical.html#boxplots">Boxplots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topical.html#heatmaps">Heatmaps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topical.html#bar-charts">Bar Charts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#les-miserables-co-occurrences">Les Miserables Co-occurrences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#periodic-table-of-elements">Periodic Table of Elements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="more_info.html">More Information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="more_info.html#contact">Contact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_info.html#thanks">Thanks</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">solution</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Basic Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topical.html">Topical Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_info.html">More Information</a></li>
+</ul>
+
+<div id="sourcelink">
+  <a href="_sources/histogram_soln.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="solution">
+<h1>solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h1>
+<table><tr>
+<script src="./964bd573-6306-4c7e-a3d9-4360a78c6267.embed.js" bokeh_plottype="embeddata"
+bokeh_modelid="964bd573-6306-4c7e-a3d9-4360a78c6267" bokeh_modeltype="Plot" async="true"></script>
+<script src="./224928db-bc9b-478d-b183-45f3dd0bc0c5.embed.js" bokeh_plottype="embeddata"
+bokeh_modelid="224928db-bc9b-478d-b183-45f3dd0bc0c5" bokeh_modeltype="Plot" async="true"></script>
+<script src="./87b264e6-9534-441f-b9bf-944282f840f8.embed.js" bokeh_plottype="embeddata"
+bokeh_modelid="87b264e6-9534-441f-b9bf-944282f840f8" bokeh_modeltype="Plot" async="true"></script>
+<script src="./66a63051-5225-4cee-be40-47b142e6e9d5.embed.js" bokeh_plottype="embeddata"
+bokeh_modelid="66a63051-5225-4cee-be40-47b142e6e9d5" bokeh_modeltype="Plot" async="true"></script>
+<script src="./b9c12b1c-b9f7-454e-abb8-b55e03e36c6b.embed.js" bokeh_plottype="embeddata"
+bokeh_modelid="b9c12b1c-b9f7-454e-abb8-b55e03e36c6b" bokeh_modeltype="Plot" async="true"></script>
+</tr></table><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133</pre></div></td><td class="code"><div class="highlight"><pre><span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.special</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">bokeh.objects</span> <span class="kn">import</span> <span class="n">Range1d</span>
+
+
+<span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span>       <span class="c"># NOTE: you can tinker with these values if you like</span>
+
+<span class="c"># sample the distribution</span>
+<span class="n">measured</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">measured</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c"># compute ideal values</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">cdf</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">erf</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="c"># EXERCISE: output to a static HTML file</span>
+<span class="n">output_file</span><span class="p">(</span><span class="s">&#39;histogram.html&#39;</span><span class="p">)</span>
+
+<span class="c"># EXERCISE: turn on plot hold</span>
+<span class="n">hold</span><span class="p">()</span>
+
+<span class="c"># Use the `quad` renderer to display the histogram bars.</span>
+<span class="n">quad</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="n">hist</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hist</span><span class="p">)),</span> <span class="n">left</span><span class="o">=</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">right</span><span class="o">=</span><span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+     <span class="n">fill_color</span><span class="o">=</span><span class="s">&quot;#036564&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;#033649&quot;</span><span class="p">,</span>
+
+     <span class="c"># NOTE: these are only needed on the first renderer</span>
+     <span class="n">background_fill</span><span class="o">=</span><span class="s">&quot;#E8DDCB&quot;</span><span class="p">,</span>
+     <span class="n">title</span><span class="o">=</span><span class="s">&quot;Normal Distribution (μ=0, σ=0.5)&quot;</span><span class="p">,</span>
+     <span class="n">tools</span><span class="o">=</span><span class="s">&quot;&quot;</span>
+<span class="p">)</span>
+
+<span class="c"># Use `line` renderers to display the PDF and CDF</span>
+<span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pdf</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;#D95B43&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s">&quot;PDF&quot;</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cdf</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;white&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s">&quot;CDF&quot;</span><span class="p">)</span>
+
+<span class="c"># Move the legend to a better place.</span>
+<span class="c"># Acceptable values: &#39;top_left&#39;, &#39;top_right&#39;, &#39;bottom_left&#39;, and &#39;bottom_right&#39;</span>
+<span class="n">legend</span><span class="p">()</span><span class="o">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="s">&quot;top_left&quot;</span>
+
+<span class="c"># EXERCISE: create a new figure</span>
+<span class="n">figure</span><span class="p">()</span>
+
+<span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span>       <span class="c"># NOTE: you can tinker with these values if you like</span>
+
+<span class="c"># sample the distribution</span>
+<span class="n">measured</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">measured</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c"># compute ideal values</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">*</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">cdf</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">erf</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sigma</span><span class="p">)))</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="c"># EXERCISE: recreate the first plot for this new data</span>
+<span class="n">quad</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="n">hist</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hist</span><span class="p">)),</span> <span class="n">left</span><span class="o">=</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">right</span><span class="o">=</span><span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+     <span class="n">fill_color</span><span class="o">=</span><span class="s">&quot;#036564&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;#033649&quot;</span><span class="p">,</span> <span class="n">background_fill</span><span class="o">=</span><span class="s">&quot;#E8DDCB&quot;</span><span class="p">,</span>
+     <span class="n">title</span><span class="o">=</span><span class="s">&quot;Log Normal Distribution (μ=0, σ=0.5)&quot;</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pdf</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;#D95B43&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s">&quot;PDF&quot;</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cdf</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;white&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s">&quot;CDF&quot;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">()</span><span class="o">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="s">&quot;bottom_right&quot;</span>
+
+<span class="c"># EXERCISE (optional): Add new plots for the following distributions:</span>
+<span class="c"># * Gamma</span>
+<span class="c"># * Beta</span>
+<span class="c"># * Weibull</span>
+<span class="c"># The numerical code is included, you will need to create new figures.</span>
+<span class="n">figure</span><span class="p">()</span>
+
+<span class="n">k</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span>
+
+<span class="c"># sample the distribution</span>
+<span class="n">measured</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">measured</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c"># compute ideal values</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">theta</span><span class="o">**</span><span class="n">k</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+<span class="n">cdf</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">gammainc</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">x</span><span class="o">/</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
+<span class="n">quad</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="n">hist</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hist</span><span class="p">)),</span> <span class="n">left</span><span class="o">=</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">right</span><span class="o">=</span><span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+     <span class="n">fill_color</span><span class="o">=</span><span class="s">&quot;#036564&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;#033649&quot;</span><span class="p">,</span> <span class="n">background_fill</span><span class="o">=</span><span class="s">&quot;#E8DDCB&quot;</span><span class="p">,</span>
+     <span class="n">title</span><span class="o">=</span><span class="s">&quot;Gamma Distribution (k=1, θ=2)&quot;</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pdf</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;#D95B43&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s">&quot;PDF&quot;</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cdf</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;white&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s">&quot;CDF&quot;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">()</span><span class="o">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="s">&quot;top_left&quot;</span>
+
+
+<span class="n">figure</span><span class="p">()</span>
+
+<span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span>
+
+<span class="c"># sample the distribution</span>
+<span class="n">measured</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">measured</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c"># compute ideal values</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="n">alpha</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">beta</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+<span class="n">cdf</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">btdtr</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">quad</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="n">hist</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hist</span><span class="p">)),</span> <span class="n">left</span><span class="o">=</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">right</span><span class="o">=</span><span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+     <span class="n">fill_color</span><span class="o">=</span><span class="s">&quot;#036564&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;#033649&quot;</span><span class="p">,</span> <span class="n">background_fill</span><span class="o">=</span><span class="s">&quot;#E8DDCB&quot;</span><span class="p">,</span>
+     <span class="n">title</span><span class="o">=</span><span class="s">&quot;Beta Distribution (α=2, β=2)&quot;</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pdf</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;#D95B43&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s">&quot;PDF&quot;</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cdf</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;white&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s">&quot;CDF&quot;</span><span class="p">)</span>
+
+
+
+<span class="n">figure</span><span class="p">()</span>
+
+<span class="n">lam</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span>
+
+<span class="c"># sample the distribution</span>
+<span class="n">measured</span> <span class="o">=</span> <span class="n">lam</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">k</span><span class="p">)</span>
+<span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">measured</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c"># compute ideal values</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="n">lam</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">lam</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">lam</span><span class="p">)</span><span class="o">**</span><span class="n">k</span><span class="p">)</span>
+<span class="n">cdf</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">lam</span><span class="p">)</span><span class="o">**</span><span class="n">k</span><span class="p">)</span>
+
+<span class="n">quad</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="n">hist</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hist</span><span class="p">)),</span> <span class="n">left</span><span class="o">=</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">right</span><span class="o">=</span><span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+     <span class="n">fill_color</span><span class="o">=</span><span class="s">&quot;#036564&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;#033649&quot;</span><span class="p">,</span> <span class="n">background_fill</span><span class="o">=</span><span class="s">&quot;#E8DDCB&quot;</span><span class="p">,</span>
+     <span class="n">title</span><span class="o">=</span><span class="s">&quot;Weibull Distribution (λ=1, k=1.25)&quot;</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pdf</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;#D95B43&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s">&quot;PDF&quot;</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cdf</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s">&quot;white&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s">&quot;CDF&quot;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">()</span><span class="o">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="s">&quot;top_left&quot;</span>
+
+<span class="n">show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="_sources/histogram_soln.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Continuum Anaytics.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.1.<br/>
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-7', 'pydata.org');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>

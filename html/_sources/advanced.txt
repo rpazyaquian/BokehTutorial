@@ -1,0 +1,38 @@
+
+Advanced Exercises
+==================
+
+This section contains exercises that show how to use Bokeh to produced
+specialized visualizations.
+
+.. contents::
+    :local:
+
+.. _periodic:
+
+Les Miserables Co-occurrences
+-----------------------------
+
+Mike Bostock's `Les Miserables Co-occurrence <http://bost.ocks.org/mike/miserables>`_ chart from D3 is a nice
+example of a larger categorical heatmap. Let's see if we can make our own chart from this data.
+
+* exercise location: **scripts/les_mis.py**
+
+.. literalinclude:: scripts/les_mis.py
+   :language: python
+   :linenos:
+   :emphasize-lines: 10,47,49-50,50,52,54-56,58-62,64-65
+
+See the :doc:`les_mis_soln`.
+
+Periodic Table of Elements
+--------------------------
+
+* exercise location: **scripts/periodic.py**
+
+.. literalinclude:: scripts/periodic.py
+   :language: python
+   :linenos:
+   :emphasize-lines: 56-58,60-62,76-77,79-80,82-83,88-94
+
+See the :doc:`periodic_soln`.

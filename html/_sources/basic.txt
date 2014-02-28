@@ -1,0 +1,80 @@
+
+Basic Exercises
+===============
+
+.. contents::
+    :local:
+
+.. _line:
+
+Drawing Lines
+-------------
+
+* exercise location: **scripts/lines.py**
+
+.. literalinclude:: scripts/lines.py
+   :language: python
+   :linenos:
+   :emphasize-lines: 34,44-45,51,53-54
+
+See the :doc:`lines_soln`.
+
+.. _scatter:
+
+Scattering Points
+-----------------
+
+* exercise location: **scripts/scatter.py**
+
+.. literalinclude:: scripts/scatter.py
+   :language: python
+   :linenos:
+   :emphasize-lines: 25,30-31,33-38,42-43,45,58-61
+
+See the :doc:`scatter_soln`.
+
+.. _images:
+
+Displaying Images
+-----------------
+
+* exercise location: **scripts/image.py**
+
+.. literalinclude:: scripts/image.py
+   :language: python
+   :linenos:
+   :emphasize-lines: 56,58-65,80,94-96
+
+See the :doc:`image_soln`.
+
+.. _styling:
+
+Styling your plots
+------------------
+
+* exercise location: **scripts/style.py**
+
+.. literalinclude:: scripts/style.py
+   :language: python
+   :linenos:
+   :emphasize-lines: 37,39,51
+
+See the :doc:`style_soln`.
+
+.. _hover:
+
+Hovering above the Data
+-----------------------
+
+* exercise location: **scripts/hover.py**
+
+.. literalinclude:: scripts/hover.py
+   :language: python
+   :linenos:
+   :emphasize-lines: 22-23,39,48-49,51,57-65
+
+See the :doc:`hover_soln`.
+
+
+
+..

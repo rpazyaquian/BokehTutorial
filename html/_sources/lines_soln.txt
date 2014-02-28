@@ -1,0 +1,20 @@
+
+solution
+--------
+
+.. raw:: html
+
+    <table><tr>
+    <script src="./3607ac1f-afc4-465b-9cf7-4c464a289d68.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="3607ac1f-afc4-465b-9cf7-4c464a289d68" bokeh_modeltype="Plot" async="true"></script>
+    <script src="./1c7f6b48-dd09-40a3-a16b-afe3e480d8ae.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="1c7f6b48-dd09-40a3-a16b-afe3e480d8ae" bokeh_modeltype="Plot" async="true"></script>
+    <script src="./2497374a-39cd-4c3d-8eec-c4587602646f.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="2497374a-39cd-4c3d-8eec-c4587602646f" bokeh_modeltype="Plot" async="true"></script>
+    <script src="./9ef43401-a360-49c8-9cb3-6201965bd7b6.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="9ef43401-a360-49c8-9cb3-6201965bd7b6" bokeh_modeltype="Plot" async="true"></script>
+    </tr></table>
+
+.. literalinclude:: solutions/lines.py
+   :language: python
+   :linenos:

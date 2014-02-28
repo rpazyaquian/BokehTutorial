@@ -1,0 +1,16 @@
+
+solution
+--------
+
+.. raw:: html
+
+    <table><tr>
+    <script src="./3b830762-1919-4589-b044-e96404611990.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="3b830762-1919-4589-b044-e96404611990" bokeh_modeltype="Plot" async="true"></script>
+    <script src="./90fccad1-5d3c-441f-b482-b423a381fdf3.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="90fccad1-5d3c-441f-b482-b423a381fdf3" bokeh_modeltype="Plot" async="true"></script>
+    </tr></table>
+
+.. literalinclude:: solutions/olympics.py
+   :language: python
+   :linenos:

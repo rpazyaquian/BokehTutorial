@@ -1,0 +1,13 @@
+
+solution
+--------
+
+.. raw:: html
+
+    <table><tr>
+    <script src="./5b9c726b-558f-4f30-b854-92e081151dc5.embed.js" bokeh_plottype="embeddata" bokeh_modelid="5b9c726b-558f-4f30-b854-92e081151dc5" bokeh_modeltype="Plot" async="true"></script>
+    </tr></table>
+
+.. literalinclude:: solutions/boxplot.py
+   :language: python
+   :linenos:

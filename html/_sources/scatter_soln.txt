@@ -1,0 +1,20 @@
+
+solution
+--------
+
+.. raw:: html
+
+    <table><tr>
+    <script src="./516802eb-c303-46f3-90ad-fcddbb3a3231.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="516802eb-c303-46f3-90ad-fcddbb3a3231" bokeh_modeltype="Plot" async="true"></script>
+    <script src="./adbc0ba8-bba9-43e6-afc9-6251a51f6115.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="adbc0ba8-bba9-43e6-afc9-6251a51f6115" bokeh_modeltype="Plot" async="true"></script>
+    <script src="./d15e07aa-56ab-4b38-ad9b-9d64a53abb31.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="d15e07aa-56ab-4b38-ad9b-9d64a53abb31" bokeh_modeltype="Plot" async="true"></script>
+    <script src="./20253fd6-792a-452c-971d-0262525cc2f0.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="20253fd6-792a-452c-971d-0262525cc2f0" bokeh_modeltype="Plot" async="true"></script>
+    </tr></table>
+
+.. literalinclude:: solutions/scatter.py
+   :language: python
+   :linenos:

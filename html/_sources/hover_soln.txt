@@ -1,0 +1,14 @@
+
+solution
+--------
+
+.. raw:: html
+
+    <table><tr>
+    <script src="./cd1db59c-e24f-4b5b-9ac2-1f82dbf59de3.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="cd1db59c-e24f-4b5b-9ac2-1f82dbf59de3" bokeh_modeltype="Plot" async="true"></script>
+    </tr></table>
+
+.. literalinclude:: solutions/hover.py
+   :language: python
+   :linenos:

@@ -1,0 +1,16 @@
+
+solution
+--------
+
+.. raw:: html
+
+    <table><tr>
+    <script src="./fd5eec57-ece2-4d5d-9fa4-c9bd28804ba3.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="fd5eec57-ece2-4d5d-9fa4-c9bd28804ba3" bokeh_modeltype="Plot" async="true"></script>
+    <script src="./image_example.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="image_example" bokeh_modeltype="Plot" async="true"></script>
+    </tr></table>
+
+.. literalinclude:: solutions/image.py
+   :language: python
+   :linenos:

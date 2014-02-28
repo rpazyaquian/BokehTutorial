@@ -1,0 +1,14 @@
+
+solution
+--------
+
+.. raw:: html
+
+    <table><tr>
+    <script src="./7acf7960-16f5-405c-86ee-a110cab766f8.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="7acf7960-16f5-405c-86ee-a110cab766f8" bokeh_modeltype="Plot" async="true"></script>
+    </tr></table>
+
+.. literalinclude:: solutions/unemployment.py
+   :language: python
+   :linenos:

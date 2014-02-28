@@ -1,0 +1,16 @@
+
+solution
+--------
+
+.. raw:: html
+
+    <table><tr>
+    <script src="./34dae93f-4b51-4df9-b636-62a08c6f13e0.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="34dae93f-4b51-4df9-b636-62a08c6f13e0" bokeh_modeltype="Plot" async="true"></script>
+    <script src="./f06512c2-244f-4de5-910b-c7e94a6f079a.embed.js" bokeh_plottype="embeddata"
+    bokeh_modelid="f06512c2-244f-4de5-910b-c7e94a6f079a" bokeh_modeltype="Plot" async="true"></script>
+    </tr></table>
+
+.. literalinclude:: solutions/stocks.py
+   :language: python
+   :linenos:
